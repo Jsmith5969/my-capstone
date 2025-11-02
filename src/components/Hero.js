@@ -3,15 +3,15 @@ import ReservationDropdown from './ReservationDropdown';
 
 function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" aria-labelledby="hero-title">
       <div className="hero-content">
-        <h1>Little Lemon</h1>
-        <h2>Chicago</h2>
+        <h1 id="hero-title">Little Lemon</h1>
+        <p className="hero-subtitle" aria-label="Location">Chicago</p>
         <p>We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
         <ReservationDropdown />
       </div>
       <div className="hero-image">
-        <img src="/images/restaurant-food.jpg" alt="Mediterranean dish" />
+        <img src="/images/restaurant-food.jpg" alt="Delicious Mediterranean dish featuring fresh ingredients" />
       </div>
     </section>
   );

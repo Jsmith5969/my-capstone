@@ -5,7 +5,7 @@ import About from '../components/About';
 
 function HomePage() {
   return (
-    <main>
+    <main id="main-content" role="main" aria-label="Home page">
       <Hero />
       <MenuHighlightsDropdown />
       <About />

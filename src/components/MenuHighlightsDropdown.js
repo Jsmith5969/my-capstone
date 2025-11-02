@@ -70,8 +70,8 @@ function MenuHighlightsDropdown() {
   const currentItems = menuCategories[selectedCategory] || [];
 
   return (
-    <section className="menu-highlights-dropdown">
-      <h2>Menu Highlights</h2>
+    <section className="menu-highlights-dropdown" aria-labelledby="menu-highlights-dropdown-title">
+      <h2 id="menu-highlights-dropdown-title">Menu Highlights</h2>
       
       {/* Dropdown Selector */}
       <div className="menu-dropdown-container">
@@ -79,39 +79,44 @@ function MenuHighlightsDropdown() {
           className="dropdown-header" 
           onClick={toggleDropdown}
           aria-expanded={isOpen}
-          aria-label="Select menu category"
+          aria-haspopup="true"
+          aria-label="On Click"
+          id="menu-category-button"
         >
           <span className="selected-category">{selectedCategory}</span>
           <span className={`dropdown-arrow ${isOpen ? 'open' : ''}`} aria-hidden="true">▼</span>
         </button>
         
         {isOpen && (
-          <div className="dropdown-menu" role="menu">
+          <ul className="dropdown-menu" role="menu" aria-labelledby="menu-category-button">
             {Object.keys(menuCategories).map((category) => (
-              <button
-                key={category}
-                role="menuitem"
-                className={`dropdown-option ${category === selectedCategory ? 'selected' : ''}`}
-                onClick={() => selectCategory(category)}
-              >
-                {category}
-              </button>
+              <li key={category} role="none">
+                <button
+                  role="menuitem"
+                  className={`dropdown-option ${category === selectedCategory ? 'selected' : ''}`}
+                  onClick={() => selectCategory(category)}
+                  aria-current={category === selectedCategory ? 'true' : undefined}
+                  aria-label="On Click"
+                >
+                  {category}
+                </button>
+              </li>
             ))}
-          </div>
+          </ul>
         )}
       </div>
 
       {/* Menu Items Display */}
-      <div className="menu-items">
+      <div className="menu-items" role="list" aria-label={`Menu items in ${selectedCategory}`}>
         {currentItems.map((item, index) => (
-          <article key={index} className="menu-item">
-            <img src={item.image} alt={item.name} />
+          <article key={index} className="menu-item" role="listitem">
+            <img src={item.image} alt={`${item.name} - ${item.description}`} />
             <div className="item-content">
               <h3>{item.name}</h3>
               <p className="description">{item.description}</p>
-              <p className="price">{item.price}</p>
+              <p className="price" aria-label={`Price: ${item.price}`}>{item.price}</p>
               {item.category !== selectedCategory && selectedCategory === 'All Menu Items' && (
-                <span className="category-tag">{item.category}</span>
+                <span className="category-tag" aria-label={`Category: ${item.category}`}>{item.category}</span>
               )}
             </div>
           </article>
@@ -119,7 +124,7 @@ function MenuHighlightsDropdown() {
       </div>
 
       {currentItems.length === 0 && (
-        <p className="no-items">No items available in this category.</p>
+        <p className="no-items" role="status">No items available in this category.</p>
       )}
     </section>
   );

@@ -222,6 +222,29 @@
   border-color: #495E57;
 }
 
+/* Validation Error Styles */
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+  border-color: #d32f2f;
+  background-color: #fff8f8;
+}
+
+.form-group input.error:focus,
+.form-group select.error:focus,
+.form-group textarea.error:focus {
+  border-color: #d32f2f;
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+}
+
+.error-message {
+  display: block;
+  color: #d32f2f;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
 .submit-btn {
   background-color: #F4CE14;
   color: #495E57;
@@ -236,10 +259,18 @@
   margin-top: 1rem;
 }
 
-.submit-btn:hover {
+.submit-btn:hover:not(:disabled) {
   background-color: #495E57;
   color: #F4CE14; /* Yellow text on green background */
   transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+  background-color: #ddd;
+  color: #999;
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
 }
 
 /* Responsive Design */

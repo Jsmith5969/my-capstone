@@ -82,44 +82,48 @@ function ReservationDropdown() {
       <button 
         className={`cta-button reservation-btn ${isOpen ? 'active' : ''}`}
         onClick={toggleDropdown}
-        aria-label="Reserve a table"
+        aria-label="On Click"
         aria-expanded={isOpen}
+        aria-haspopup="true"
+        id="reservation-menu-button"
       >
         Reserve a Table
-        <span className={`dropdown-arrow ${isOpen ? 'open' : ''}`}>▼</span>
+        <span className={`dropdown-arrow ${isOpen ? 'open' : ''}`} aria-hidden="true">▼</span>
       </button>
       
       {isOpen && (
-        <div className="reservation-dropdown-menu">
-          <div className="dropdown-header">
-            <h3>Choose Your Reservation</h3>
+        <div className="reservation-dropdown-menu" role="menu" aria-labelledby="reservation-menu-button">
+          <header className="dropdown-header">
+            <h3 id="reservation-menu-title">Choose Your Reservation</h3>
             <p>Select the best option for your dining experience</p>
-          </div>
+          </header>
           
-          <div className="reservation-options">
+          <nav className="reservation-options" aria-label="Reservation options">
             {reservationOptions.map((option, index) => (
-              <div
+              <button
                 key={index}
                 className="reservation-option"
                 onClick={option.action}
+                role="menuitem"
+                aria-label="On Click"
               >
                 <div className="option-content">
                   <h4>{option.title}</h4>
                   <p className="option-description">{option.description}</p>
                   <span className="option-time">{option.time}</span>
                 </div>
-                <div className="option-arrow">→</div>
-              </div>
+                <div className="option-arrow" aria-hidden="true">→</div>
+              </button>
             ))}
-          </div>
+          </nav>
           
-          <div className="dropdown-footer">
-            <p>Need help? Call us at (555) 123-4567</p>
-          </div>
+          <footer className="dropdown-footer">
+            <p>Need help? Call us at <a href="tel:+15551234567">(555) 123-4567</a></p>
+          </footer>
         </div>
       )}
       
-      {isOpen && <div className="reservation-overlay" onClick={closeDropdown}></div>}
+      {isOpen && <div className="reservation-overlay" onClick={closeDropdown} aria-label="On Click" role="button" tabIndex="0"></div>}
     </div>
   );
 }

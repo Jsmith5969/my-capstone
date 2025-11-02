@@ -40,8 +40,9 @@ function DropdownNav() {
       <button 
         className={`dropdown-toggle ${isOpen ? 'active' : ''}`}
         onClick={toggleDropdown}
-        aria-label="Navigation menu"
+        aria-label="On Click"
         aria-expanded={isOpen}
+        aria-haspopup="true"
       >
         <span className="hamburger-icon">
           <span></span>
@@ -60,8 +61,9 @@ function DropdownNav() {
                   to={item.path} 
                   className={({ isActive }) => isActive ? "active" : ""}
                   onClick={closeDropdown}
+                  aria-label="On Click"
                 >
-                  <span className="menu-icon">{item.icon}</span>
+                  <span className="menu-icon" aria-hidden="true">{item.icon}</span>
                   <span className="menu-label">{item.label}</span>
                 </NavLink>
               </li>
@@ -70,7 +72,7 @@ function DropdownNav() {
         </nav>
       </div>
       
-      {isOpen && <div className="dropdown-overlay" onClick={closeDropdown}></div>}
+      {isOpen && <div className="dropdown-overlay" onClick={closeDropdown} aria-label="On Click" role="button" tabIndex="0"></div>}
     </div>
   );
 }

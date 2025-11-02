@@ -48,17 +48,16 @@ function MainContent() {
 
   return (
     <>
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <Header />
       <Nav />
-      <main>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/menu" element={<MenuPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />} />
-          <Route path="/booking-confirmed" element={<ConfirmedBooking />} />
-        </Routes>
-      </main>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/menu" element={<MenuPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />} />
+        <Route path="/booking-confirmed" element={<ConfirmedBooking />} />
+      </Routes>
       <Footer />
     </>
   );

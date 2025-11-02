@@ -60,9 +60,9 @@ function MenuPage() {
   };
 
   return (
-    <main className="menu-page">
+    <main id="main-content" className="menu-page" role="main" aria-labelledby="menu-page-title">
       <div className="container">
-        <h1>Our Complete Menu</h1>
+        <h1 id="menu-page-title">Our Complete Menu</h1>
         
         <MenuHighlightsDropdown />
       </div>
