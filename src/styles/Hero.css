@@ -1,0 +1,51 @@
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #495E57; /* Olive green */
+  padding: 2rem 2rem 8rem 2rem; /* Increased bottom padding to accommodate overflowing image */
+  color: #fff;
+  position: relative;
+  margin-bottom: 6rem; /* Space for the image to overflow into */
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 50%;
+}
+
+.hero-content h1 {
+  color: #F4CE14; /* Yellow text */
+}
+
+.hero-content h2 {
+  color: white; /* White text */
+}
+
+.hero-image {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-image img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transform: translateY(50%); /* Pushes image down so half is below the green section */
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-content {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+  .hero-image img {
+    max-width: 200px;
+  }
+}

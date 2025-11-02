@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
+body {
+margin: 0;
+font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header layout */
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav ul {
+display: flex;
+list-style: none;
+gap: 1.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.hero {
+display: grid;
+grid-template-columns: 1fr 1fr;
+background-color: #495E57;
+color: white;
+padding: 2rem;
+align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.hero img {
+width: 100%;
+border-radius: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Specials section */
+.specials {
+text-align: center;
+padding: 3rem 1rem;
+}
+
+.cards {
+display: flex;
+justify-content: center;
+gap: 2rem;
+margin-top: 1rem;
+}
+
+.card {
+width: 250px;
+background-color: #f9f9f9;
+border-radius: 10px;
+overflow: hidden;
+padding: 1rem;
+text-align: left;
+}
+
+.card img {
+width: 100%;
+border-radius: 8px;
+}
+
+/* Footer grid */
+footer {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+background-color: #495E57;
+color: white;
+padding: 2rem;
+text-align: left;
+}
+
+.footer-section {
+padding: 1rem;
 }

@@ -1,0 +1,263 @@
+/* Reservation Dropdown Styles */
+.reservation-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.reservation-btn {
+  background-color: #F4CE14;
+  color: #495E57;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  justify-content: space-between;
+}
+
+.reservation-btn:hover {
+  background-color: #495E57;
+  color: #F4CE14; /* Yellow text on green background */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.reservation-btn.active {
+  background-color: #495E57;
+  color: #F4CE14; /* Yellow text on green background */
+}
+
+.dropdown-arrow {
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.reservation-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 350px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  animation: dropdownFadeIn 0.3s ease-out;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.dropdown-header {
+  background: linear-gradient(135deg, #495E57 0%, #3a4a45 100%);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.dropdown-header h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  font-family: var(--font-family-heading, Georgia, serif);
+  color: #F4CE14; /* Yellow text */
+}
+
+.dropdown-header p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+.reservation-options {
+  padding: 1rem 0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.reservation-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.reservation-option:last-child {
+  border-bottom: none;
+}
+
+.reservation-option:hover {
+  background-color: #f8f8f8;
+  padding-left: 2rem;
+}
+
+.option-content {
+  flex: 1;
+}
+
+.option-content h4 {
+  margin: 0 0 0.25rem 0;
+  color: #495E57;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.option-description {
+  margin: 0 0 0.25rem 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.option-time {
+  color: #F4CE14;
+  background-color: #495E57;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.option-arrow {
+  color: #495E57;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.reservation-option:hover .option-arrow {
+  transform: translateX(5px);
+}
+
+.dropdown-footer {
+  background-color: #f8f8f8;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+.dropdown-footer p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Overlay */
+.reservation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .reservation-dropdown-menu {
+    min-width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .reservation-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    min-width: 160px;
+  }
+  
+  .dropdown-header {
+    padding: 1.25rem;
+  }
+  
+  .dropdown-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .reservation-option {
+    padding: 0.875rem 1.25rem;
+  }
+  
+  .reservation-option:hover {
+    padding-left: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reservation-dropdown-menu {
+    min-width: 280px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  
+  .reservation-btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+    min-width: 150px;
+  }
+  
+  .option-content h4 {
+    font-size: 1rem;
+  }
+  
+  .option-description {
+    font-size: 0.85rem;
+  }
+  
+  .option-time {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .reservation-dropdown-menu {
+    border: 2px solid #000;
+  }
+  
+  .reservation-option {
+    border-bottom: 2px solid #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .reservation-btn,
+  .dropdown-arrow,
+  .reservation-option,
+  .option-arrow {
+    transition: none;
+  }
+  
+  .reservation-dropdown-menu {
+    animation: none;
+  }
+}

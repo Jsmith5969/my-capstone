@@ -1,0 +1,210 @@
+/* Booking Page Styles */
+.booking-page {
+  padding: 2rem 0;
+  background-color: var(--color-light);
+  min-height: 80vh;
+}
+
+.booking-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.booking-container h1 {
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  font-family: var(--font-family-heading);
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--color-dark);
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.submit-btn {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  background-color: var(--color-secondary);
+}
+
+/* About Page Extended Content */
+.about-page .extended-about {
+  padding: 3rem 0;
+  background-color: white;
+}
+
+.extended-about h2 {
+  color: var(--color-primary);
+  margin: 2rem 0 1rem 0;
+  font-family: var(--font-family-heading);
+}
+
+.extended-about p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--color-dark);
+}
+
+.extended-about ul {
+  list-style: none;
+  padding: 0;
+}
+
+.extended-about li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  color: var(--color-dark);
+}
+
+.extended-about li:before {
+  content: "🏆 ";
+  margin-right: 0.5rem;
+}
+
+/* Menu Page Styles */
+.menu-page {
+  padding: 2rem 0;
+}
+
+.menu-page h1 {
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  font-family: var(--font-family-heading);
+}
+
+.full-menu {
+  margin-top: 3rem;
+}
+
+.menu-section {
+  margin-bottom: 3rem;
+}
+
+.menu-section h2 {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-family-heading);
+}
+
+.menu-items {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.menu-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-2px);
+}
+
+.menu-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.item-header h3 {
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--color-secondary);
+  font-size: 1.1rem;
+}
+
+.item-details p {
+  color: var(--color-dark);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .booking-container {
+    margin: 0 1rem;
+    padding: 1.5rem;
+  }
+  
+  .menu-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .menu-item img {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .item-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
